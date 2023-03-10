@@ -1,8 +1,9 @@
 <?php
 
-require 'db_conn.php';
+require 'function.php';
+
 if (isset($_POST['todo_submit'])){
-    createTogit addo($_POST);
+    createTodo($_POST);
 }
 
 ?>
@@ -20,24 +21,30 @@ if (isset($_POST['todo_submit'])){
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 m-auto">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>My Todo List</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="form-label">To Do</label>
-                            <input type="text" class="form-control" name="todo" placeholder="Enter what you need to do"><br>
+            <div class="container">
+                <div class="col-md-4"></div>
+                <div class="col-lg-4 m-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>My Todo List</h3>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1" class="form-label">To Do Time</label>
-                            <input type="date" name="todo_time" class="form-control"><br>
+                        <div class="card-body">
+                            <form action="index.php" method="POST">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="form-label">Task</label>
+                                <input type="text" class="form-control" name="todo" placeholder="Enter what you need to do"><br>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="form-label">Pending By</label>
+                                <input type="date" name="todo_time" class="form-control"><br>
+                            </div>
+                            <button type="submit" name="todo_submit" class="btn btn-primary">Add &#x2B;</button>
+                            </form>
                         </div>
-                        <button type="submit" name="todo_submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </div>
+           
         </div>
     </div>
 

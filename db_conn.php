@@ -2,7 +2,7 @@
 
 $conn = mysqli_connect("localhost","root", "");
 if($conn){
-    echo "mjnkkk";
+    echo "";
 }else{
     echo "Error";
 }
